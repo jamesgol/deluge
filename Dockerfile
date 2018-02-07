@@ -28,4 +28,6 @@ VOLUME /downloads
 EXPOSE 8112
 EXPOSE 58846
 
+ADD run.sh /run.sh
+
 ENTRYPOINT ["/bin/bash", "/run.sh"]
