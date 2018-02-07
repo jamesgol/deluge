@@ -5,9 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 # Set correct environment variables
 ENV HOME /root
 
-# Use baseimage-docker's init system
-CMD ["/sbin/my_init"]
-
 # Fix a Debianism of the nobody's uid being 65534
 RUN usermod -u 99 nobody && usermod -g 100 nobody
 
