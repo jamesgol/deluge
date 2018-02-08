@@ -14,12 +14,11 @@ RUN usermod -u 99 nobody && usermod -g 100 nobody
 RUN apt-get update && \
     apt-get install -qy software-properties-common && \
     add-apt-repository ppa:deluge-team/ppa && \
-    add-apt-repository multiverse && \
-    apt-get remove -qy software-properties-common && \
-    apt-get autoremove -qy
+    add-apt-repository multiverse
 
 RUN apt-get update -qq && \
     apt-get install -qy deluged deluge-web unrar unzip p7zip && \
+    apt-get autoremove -qy && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
